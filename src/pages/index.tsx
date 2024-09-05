@@ -1,5 +1,9 @@
-import About from "@/Components/about";
+import About from "@/Components/About";
 
 export default function Home() {
-  return;
+  return (
+    <>
+      <About />
+    </>
+  );
 }

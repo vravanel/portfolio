@@ -7,11 +7,15 @@ import {
   Container,
   Button,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-regular-svg-icons";
 import Aside from "./Aside";
 import { useColorMode } from "@chakra-ui/react";
+import NavBar from "./NavBar";
+import Contact from "./Contact";
+import Home from "@/pages";
+import About from "./About";
 
 interface LayoutProps {
   children: ReactNode;
@@ -19,6 +23,17 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [page, setPage] = useState(<About />);
+
+  const handleChange = (pageId: string) => {
+    if (pageId === "home") {
+      return setPage(<About />);
+    }
+    if (pageId === "contact") {
+      return setPage(<Contact />);
+    }
+  };
+
   return (
     <>
       <Flex>
@@ -30,7 +45,10 @@ export default function Layout({ children }: LayoutProps) {
           </Button>
         </Box>
       </Flex>
-      <Container maxW="90%" marginTop="2rem">
+      <Flex justifyContent="flex-end" maxW="95%" marginTop="2rem">
+        <NavBar onClick={handleChange} />
+      </Flex>
+      <Container maxW="90%" marginTop="1rem">
         <Grid h="80vh" templateColumns="20% 80%" gap={6}>
           <GridItem
             bg="white"
@@ -42,7 +60,7 @@ export default function Layout({ children }: LayoutProps) {
             <Aside />
           </GridItem>
           <GridItem bg="white" borderRadius="20px" padding="1rem">
-            {children}
+            {page}
           </GridItem>
         </Grid>
       </Container>

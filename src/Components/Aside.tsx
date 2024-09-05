@@ -12,8 +12,10 @@ export default function Aside() {
         src="https://picsum.photos/seed/picsum/200/200"
         alt="test"
         borderRadius="20px"
+        position="absolute"
+        top="140px"
       />
-      <Heading as="h1" size="md" marginTop="1rem">
+      <Heading as="h1" size="md" marginTop="9rem">
         Vincent Ravanel
       </Heading>
       <Text fontSize="lg">Développeur Web</Text>
