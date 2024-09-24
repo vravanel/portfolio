@@ -14,8 +14,8 @@ import Aside from "./Aside";
 import { useColorMode } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import Contact from "./Contact";
-import Home from "@/pages";
 import About from "./About";
+import Resume from "./Resume";
 
 interface LayoutProps {
   children: ReactNode;
@@ -31,6 +31,9 @@ export default function Layout({ children }: LayoutProps) {
     }
     if (pageId === "contact") {
       return setPage(<Contact />);
+    }
+    if (pageId === "resume") {
+      return setPage(<Resume />);
     }
   };
 
@@ -48,8 +51,8 @@ export default function Layout({ children }: LayoutProps) {
       <Flex justifyContent="flex-end" maxW="95%" marginTop="2rem">
         <NavBar onClick={handleChange} />
       </Flex>
-      <Container maxW="90%" marginTop="1rem">
-        <Grid h="80vh" templateColumns="20% 80%" gap={6}>
+      <Container maxW="80%" marginTop="1rem">
+        <Grid h="80vh" templateColumns="25% 75%" gap={6}>
           <GridItem
             bg="white"
             borderRadius="20px"
@@ -59,7 +62,7 @@ export default function Layout({ children }: LayoutProps) {
           >
             <Aside />
           </GridItem>
-          <GridItem bg="white" borderRadius="20px" padding="1rem">
+          <GridItem bg="white" borderRadius="20px" padding="4rem">
             {page}
           </GridItem>
         </Grid>

@@ -34,15 +34,15 @@ export default function NavBar({ onClick }: BoxProps) {
           <Text fontSize="0.75rem">Home</Text>
         </Box>
         <Box
-          backgroundColor={activeBox === "exp" ? "#FF9C1A" : "white"}
+          backgroundColor={activeBox === "resume" ? "#FF9C1A" : "white"}
           padding="0.75rem"
           marginLeft="1rem"
           borderRadius="10px"
-          onClick={() => handleChange("exp")}
+          onClick={() => handleChange("resume")}
           cursor="pointer"
         >
           <FontAwesomeIcon icon={faHouse} style={{ color: "#000000" }} />
-          <Text fontSize="0.75rem">Expérience</Text>
+          <Text fontSize="0.75rem">Resume</Text>
         </Box>
         <Box
           backgroundColor={activeBox === "projet" ? "#FF9C1A" : "white"}
