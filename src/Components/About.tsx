@@ -27,7 +27,7 @@ export default function About() {
         Node.js, GraphQL et Docker. De plus, j&apos;ai développé mes aptitudes
         pédagogiques en aidant les apprenants à maîtriser ces concepts.
         Déterminé à progresser dans le domaine du développement web, je suis
-        prêt à relever de nouveaux défis
+        prêt à relever de nouveaux défis.
       </Text>
       <Heading margin="1rem 0">Mes Compétences</Heading>
       <GridItem marginBottom="1rem" display="grid" gap={10} gridTemplateColumns="45% 45%">

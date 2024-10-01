@@ -16,6 +16,7 @@ import NavBar from "./NavBar";
 import Contact from "./Contact";
 import About from "./About";
 import Resume from "./Resume";
+import Projet from "./Projet";
 
 interface LayoutProps {
   children: ReactNode;
@@ -34,6 +35,9 @@ export default function Layout({ children }: LayoutProps) {
     }
     if (pageId === "resume") {
       return setPage(<Resume />);
+    }
+    if (pageId === "projet") {
+      return setPage(<Projet />)
     }
   };
 
