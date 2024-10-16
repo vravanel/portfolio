@@ -19,80 +19,60 @@ export default function Aside() {
         Vincent Ravanel
       </Heading>
       <Text fontSize="lg">Développeur Web</Text>
-      <Flex marginTop=".5rem">
-        <FontAwesomeIcon
-          icon={faLinkedin}
-          size="xl"
-          className="bg-[#ECF2FA] p-4 rounded-lg"
-        />
-        <FontAwesomeIcon
-          icon={faGithub}
-          size="xl"
-          className="ml-5 bg-[#ECF2FA] p-4 rounded-lg"
-        />
-      </Flex>
       <Box
-        bg="#ECF2FA"
+        bgGradient="linear(to-r, #ECF2FA, #F9FBFD)"
         w="90%"
-        p={4}
+        p={5}
         color="black"
-        marginTop="1rem"
-        borderRadius="10px"
-        height="35vh"
-        display="flex"
-        flexDirection="column"
+        marginTop="1.5rem"
+        borderRadius="12px"
+        shadow="lg"
       >
         <Box
-          marginTop="1rem"
           display="flex"
           flexDirection="row"
           alignItems="center"
+          borderBottom="1px solid rgba(0,0,0,0.1)"
+          pb="0.75rem"
+          mb="0.75rem"
         >
-          <FontAwesomeIcon icon={faEnvelope} style={{ color: "#ff9c1a" }} />
-          <Box
-            marginTop=".5rem"
-            marginLeft="1rem"
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-          >
-            <Text color="rgba(0,0,0,0.5)"> Email</Text>
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            style={{ color: "#ff9c1a", marginRight: "0.75rem" }}
+          />
+          <Box>
+            <Text color="rgba(0,0,0,0.6)">Email</Text>
             <Text fontWeight="700">vincentravanelpro@gmail.com</Text>
           </Box>
         </Box>
-        <Box
-          marginTop="1rem"
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-        >
-          <FontAwesomeIcon icon={faLocationDot} style={{ color: "#ff9c1a" }} />
-          <Box
-            marginTop=".5rem"
-            marginLeft="1rem"
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-          >
-            <Text color="rgba(0,0,0,0.5)"> Localisation</Text>
+        <Box display="flex" flexDirection="row" alignItems="center">
+          <FontAwesomeIcon
+            icon={faLocationDot}
+            style={{ color: "#ff9c1a", marginRight: "0.75rem" }}
+          />
+          <Box>
+            <Text color="rgba(0,0,0,0.6)">Localisation</Text>
             <Text fontWeight="700">Paris</Text>
           </Box>
         </Box>
-        <Box marginTop="1.5rem" margin="auto">
+        <Box mt="1.75rem" display="flex" justifyContent="center">
           <Link
             href="./downloads/CV_RAVANEL_Vincent.pdf"
             download
-            p={5}
-            bgGradient="linear(to-r, rgba(255,156,26,1) 10%, rgba(232,5,5,1) 60%)"
+            py={3}
+            px={5}
+            bgGradient="linear(to-r, #ff9c1a, #e80505)"
             color="white"
-            borderRadius="30px"
+            borderRadius="25px"
+            display="flex"
+            alignItems="center"
           >
             <FontAwesomeIcon
               icon={faDownload}
               color="white"
-              style={{ marginRight: ".75rem" }}
+              style={{ marginRight: "0.75rem" }}
             />
-            Téléchargez mon CV
+            Télécharger mon CV
           </Link>
         </Box>
       </Box>

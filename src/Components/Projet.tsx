@@ -7,10 +7,10 @@ export default function Projet() {
         <Heading as="h1">Projets</Heading>
         <Grid gridTemplateColumns="repeat(2, 50%)" gap="2rem" marginTop="1rem">
 
-        <CardProjet title="test1" description="Ma description 1" />
-        <CardProjet title="test2" description="Ma description 2" />
-        <CardProjet title="test3" description="Ma description 3"/>
-        <CardProjet title="test4" description="Ma description 4"/>
+        <CardProjet title="test1" description="Ma description 1" stacksFront={['test', 'test2', 'test3']}  stacksBack={['test5', 'test6']}/>
+        <CardProjet title="test2" description="Ma description 2" stacksFront={['test', 'test2', 'test3']}  stacksBack={['test5', 'test6']}/>
+        <CardProjet title="test3" description="Ma description 3" stacksFront={['test', 'test2', 'test3']}  stacksBack={['test5', 'test6']}/>
+        <CardProjet title="test4" description="Ma description 4" stacksFront={['test', 'test2', 'test3']}  stacksBack={['test5', 'test6']}/>
         </Grid>
 
         </>

@@ -38,7 +38,7 @@ export default function About() {
         <GridItem
           display="grid"
           gap={4}
-          gridTemplateColumns="repeat(auto-fill,30%)"
+          gridTemplateColumns="repeat(4, 1fr)"
         >
           <Skill title="HTML" />
           <Skill title="CSS" />
@@ -64,7 +64,7 @@ export default function About() {
         <GridItem
           display="grid"
           gap={4}
-          gridTemplateColumns="repeat(auto-fill,30%)"
+           gridTemplateColumns="repeat(4, 1fr)"
           gridTemplateRows="20% 20%"
         >
           <Skill title="Esprit d'équipe" />

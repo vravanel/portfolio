@@ -55,8 +55,8 @@ export default function Layout({ children }: LayoutProps) {
       <Flex justifyContent="flex-end" maxW="95%" marginTop="2rem">
         <NavBar onClick={handleChange} />
       </Flex>
-      <Container maxW="80%" marginTop="1rem">
-        <Grid h="80vh" templateColumns="25% 75%" gap={6}>
+      <Container maxW="85%" marginTop="1rem">
+        <Grid h="80vh" templateColumns="22% 78%" gap={6}>
           <GridItem
             bg="white"
             borderRadius="20px"
