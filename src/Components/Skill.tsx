@@ -1,20 +1,29 @@
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Text, Image, useColorMode } from "@chakra-ui/react";
+import theme from "@/context/theme";
 
 interface Skill {
-    title : string,
+  title: string;
 }
 
-export default function Skill({title} : Skill) {
-    return (
-        <Box
-        padding=".75rem"
-        backgroundColor="#E1E8EF"
-        borderRadius="10px"
-        transition="background-color 0.3s"
-        _hover={{ transform: "scale(1.1)", backgroundColor: "#D4DDE4" }}
-        cursor="pointer"
-      >
-        <Text textAlign="center">{title}</Text>
-      </Box>
-      );
+export default function Skill({ title }: Skill) {
+  const { colorMode } = useColorMode();
+
+  return (
+    <Box
+      padding=".75rem"
+      color={theme.colors.text[colorMode]}
+      borderRadius="10px"
+      transition="background-color 0.3s"
+      _hover={{
+        transform: "scale(1.1)",
+        backgroundColor: theme.colors.accent.dark, 
+        color: theme.colors.text.light, 
+      }}
+      cursor="pointer"
+    >
+      <Text textAlign="center" color={theme.colors.text[colorMode]}>
+        {title}
+      </Text>
+    </Box>
+  );
 }

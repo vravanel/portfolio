@@ -1,12 +1,15 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { ColorModeScript } from "@chakra-ui/react";
+import { ColorModeScript,  useColorMode } from "@chakra-ui/react";
 import theme from "@/context/theme";
 
 export default function Document() {
+ 
+  const { colorMode } = useColorMode();
+
   return (
-    <Html lang="en">
+    <Html lang="fr">
       <Head />
-      <body className="bg-[#F3F5F9]">
+      <body style={{ backgroundColor : colorMode === 'light' ? '#F3F5F9' : ' #1A202C'}}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
         <NextScript />

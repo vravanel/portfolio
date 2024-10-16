@@ -1,4 +1,5 @@
-import { Box, Heading, UnorderedList, ListItem, Text } from "@chakra-ui/react";
+import { Box, Heading, UnorderedList, ListItem, Text, useColorMode } from "@chakra-ui/react";
+import theme from "@/context/theme";
 
 interface Card {
   title: string;
@@ -10,9 +11,11 @@ interface Card {
 }
 
 export default function Card({ title, description, color, company, missionsList, year }: Card) {
+  const { colorMode } = useColorMode();
+
   return (
     <Box
-      backgroundColor={color}
+      backgroundColor={theme.colors.background[colorMode]}
       borderRadius="12px"
       padding="1rem"
       width="100%"
@@ -21,9 +24,17 @@ export default function Card({ title, description, color, company, missionsList,
       transition="transform 0.2s, box-shadow 0.2s"
       _hover={{ transform: "scale(1.02)", boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)" }}
     >
-      <Heading as="h2" size="lg" color="#2D3748">{title}</Heading>
-      {company && <Heading as="h3" size="md" marginTop="0.5rem" color="#4A5568">{company}</Heading>}
-      <Heading as="h4" size="sm" marginTop="0.5rem" color="#718096">{year}</Heading>
+      <Heading as="h2" size="lg" color={theme.colors.text[colorMode]}>
+        {title}
+      </Heading>
+      {company && (
+        <Heading as="h3" size="md" marginTop="0.5rem" color={theme.colors.text[colorMode]}>
+          {company}
+        </Heading>
+      )}
+      <Heading as="h4" size="sm" marginTop="0.5rem" color={theme.colors.text[colorMode]}>
+        {year}
+      </Heading>
       {missionsList && (
         <UnorderedList marginTop="1rem" spacing={2} styleType="none">
           {missionsList.map((mission, index) => (
@@ -35,7 +46,9 @@ export default function Card({ title, description, color, company, missionsList,
         </UnorderedList>
       )}
       {description && (
-        <Text marginTop="1rem" color="#4A5568">{description}</Text>
+        <Text marginTop="1rem" color={theme.colors.text[colorMode]}>
+          {description}
+        </Text>
       )}
     </Box>
   );
